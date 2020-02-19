@@ -592,7 +592,7 @@ class OneSignal_Admin
         try {
             // quirk of Gutenberg editor leads to two passes if meta box is added
             // conditional removes first pass
-            if( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+            if( defined( 'REST_REQUEST' ) && REST_REQUEST && !defined( 'DML_ONESIGNAL_REST' ) ) {
                 return;
             }
 
